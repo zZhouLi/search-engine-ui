@@ -275,7 +275,7 @@ class Query(object):
         data["results"] = result_list
         with self.ix.searcher() as searcher:
             for keyword in keywords:
-                results = searcher.search(self.qp.parse(keyword), limit=1)
+                results = searcher.search(self.qp.parse(keyword), limit=1, sortedby='publish_time')
                 # keywords = [keyword for keyword, score
                 #             in results.key_terms("content", docs=10, numterms=5)]
                 # print(keywords)
